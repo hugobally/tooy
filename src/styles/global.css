@@ -1,3 +1,18 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer utilities {
+    .rotate-y-180 {
+        transform: rotateX(180deg);
+    }
+}
+
+@font-face {
+    font-family: 'Dosis';
+    font-weight: 200 800;
+    font-display: swap;
+    font-style: normal;
+    font-named-instance: 'Regular';
+    src: url(/fonts/Dosis-VariableFont_wght.ttf) format("truetype");
+}

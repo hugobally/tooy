@@ -17,6 +17,18 @@ module.exports = {
         'box-10/12': '50vh',
       }
     },
+    borderRadius: {
+      'box': '100px',
+    },
+    minWidth: {
+      'box-side': '60vh',
+    },
+    minHeight: {
+      'box-side': '60vh',
+    },
+    fontFamily: {
+      'sans': ['Dosis'],
+    },
   },
   plugins: [],
 }
