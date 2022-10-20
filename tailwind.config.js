@@ -33,6 +33,11 @@ module.exports = {
       transitionDuration: {
         DEFAULT: `250ms`,
       },
+      colors: {
+        red: {
+          500: '#ff5855',
+        }
+      }
     },
   },
   plugins: [],
