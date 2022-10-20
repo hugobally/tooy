@@ -3,7 +3,7 @@ import classNames from 'classnames'
 import { useState } from 'react'
 import GithubIcon from 'src/images/github-icon.svg'
 
-export const TRANSITION_DURATION = 250
+const TRANSITION_DURATION = 250
 
 const IndexPage = () => {
   // const [opened, setOpened] = useState('')
@@ -29,7 +29,7 @@ const IndexPage = () => {
     setStateMachine((stateMachine) => ({ ...stateMachine, lock: true }))
 
     if (stateMachine.currentlyOpened) {
-      setStateMachine(stateMachine => ({
+      setStateMachine((stateMachine) => ({
         ...stateMachine,
         [`${stateMachine.currentlyOpened}Opened`]: false,
         currentlyOpened: null,
@@ -65,7 +65,7 @@ const IndexPage = () => {
                   ...step,
                 }))
                 resolve()
-              }, TRANSITION_DURATION * i)
+              }, (TRANSITION_DURATION / 2) * i)
             )
         )
       )
@@ -123,16 +123,20 @@ const IndexPage = () => {
                     }
                   )}
                 >
-                  <div
-                    className={classNames(
-                      'w-box-3/11 h-box-9/11 flex',
-                      'bg-red-500 rounded-tl-box border-white border-r-4 border-b-4 cursor-pointer'
-                    )}
-                    onClick={() =>
-                      toggleSection('about', !stateMachine.aboutOpened)
-                    }
-                  >
-                    <h1></h1>
+                  <div className={classNames('w-box-3/11 h-box-9/11 p-3')}>
+                    <div
+                      className={classNames(
+                        'w-full h-full flex',
+                        'bg-white cursor-pointer',
+                        'rounded-tl-box rounded-tr-lg rounded-b-lg',
+                        'drop-shadow-lg'
+                      )}
+                      onClick={() =>
+                        toggleSection('about', !stateMachine.aboutOpened)
+                      }
+                    >
+                      <h1></h1>
+                    </div>
                   </div>
                   <div
                     className={classNames('transition-all', {
@@ -145,78 +149,92 @@ const IndexPage = () => {
                   <div className="flex">
                     <section>
                       <div
+                        className={classNames('p-3 transition-all', {
+                          'w-box-4/11 h-box-7/11':
+                            !stateMachine.experienceOpened,
+                          'w-box-side h-box-side':
+                            stateMachine.experienceOpened,
+                        })}
+                      >
+                        <div
+                          className={classNames(
+                            'flex w-full h-full',
+                            'cursor-pointer ',
+                            'drop-shadow-lg bg-white',
+                            {
+                              'rounded-lg': !stateMachine.experienceOpened,
+                              'rounded-box': stateMachine.experienceOpened,
+                            }
+                          )}
+                          onClick={() =>
+                            toggleSection(
+                              'experience',
+                              !stateMachine.experienceOpened
+                            )
+                          }
+                        />
+                      </div>
+                    </section>
+                    <section>
+                      <div
                         className={classNames(
-                          'flex',
-                          'bg-red-500 border-white border-x-4 border-b-4 cursor-pointer transition-all',
+                          'w-box-4/11 h-box-7/11 p-3',
+                          'transition [transform-origin:0_0]',
                           {
-                            'w-box-4/11 h-box-7/11':
-                              !stateMachine.experienceOpened,
-                            'w-box-side h-box-side rounded-box':
-                              stateMachine.experienceOpened,
+                            '[transform:rotateY(-90deg)]':
+                              stateMachine.experienceOpenedStepFour,
                           }
                         )}
-                        onClick={() =>
-                          toggleSection(
-                            'experience',
-                            !stateMachine.experienceOpened
-                          )
-                        }
-                      />
+                      >
+                        <div
+                          className={classNames(
+                            'h-full w-full flex',
+                            'bg-white cursor-pointer',
+                            'rounded-tr-box rounded-tl-lg rounded-b-lg',
+                            'drop-shadow-lg'
+                          )}
+                          onClick={() =>
+                            toggleSection(
+                              'projects',
+                              !stateMachine.projectsOpened
+                            )
+                          }
+                        />
+                      </div>
                     </section>
-                    <section
+                  </div>
+                  <section>
+                    <div
                       className={classNames(
-                        'transition [transform-origin:0_0]',
+                        'relative w-box-8/11 h-box-2/11 p-3',
+                        '[transform-origin:0_0] transition',
                         {
-                          '[transform:rotateY(-90deg)]':
-                            stateMachine.experienceOpenedStepFour,
+                          '[transform:rotateX(-90deg)] ':
+                            stateMachine.experienceOpenedStepTwo,
                         }
                       )}
                     >
                       <div
+                        className={classNames('hidden absolute w-full h-full')}
+                      >
+                        content
+                      </div>
+                      <div
                         className={classNames(
-                          'w-box-4/11 h-box-7/11 flex',
-                          'bg-red-500 rounded-tr-box border-white border-l-4 border-b-4 cursor-pointer'
+                          'flex w-full h-full',
+                          '[transform-origin:100%] transition-all cursor-pointer',
+                          'bg-white rounded-lg',
+                          {
+                            '[transform:rotateY(-130deg)]':
+                              stateMachine.travelsOpened,
+                          },
+                          'drop-shadow-lg'
                         )}
                         onClick={() =>
-                          toggleSection(
-                            'projects',
-                            !stateMachine.projectsOpened
-                          )
+                          toggleSection('travels', !stateMachine.travelsOpened)
                         }
-                      />
-                    </section>
-                  </div>
-                  <section
-                    className={classNames(
-                      'w-box-8/11 h-box-2/11 relative [transform-origin:0_0] transition',
-                      {
-                        '[transform:rotateX(-90deg)] ':
-                          stateMachine.experienceOpenedStepTwo,
-                      }
-                    )}
-                  >
-                    <div
-                      className={classNames(
-                        'absolute w-full h-full',
-                        'bg-red-600 border-white border-l-4 border-y-4'
-                      )}
-                    >
-                      test
+                      ></div>
                     </div>
-                    <div
-                      className={classNames(
-                        'w-full h-full absolute flex',
-                        'bg-red-500 [transform-origin:100%] transition-all cursor-pointer',
-                        {
-                          '[transform:rotateY(-130deg)]':
-                            stateMachine.travelsOpened,
-                        },
-                        'border-white border-y-4 border-l-4'
-                      )}
-                      onClick={() =>
-                        toggleSection('travels', !stateMachine.travelsOpened)
-                      }
-                    ></div>
                   </section>
                 </div>
               </div>
@@ -230,28 +248,30 @@ const IndexPage = () => {
                     }
                   )}
                 >
-                  <div className={classNames('bg-red-800')}>
+                  <div className={classNames('')}>
                     hello
                     <img alt="github icon" src={GithubIcon} />
                   </div>
                 </div>
-                <div
-                  className={classNames(
-                    'w-box-side h-box-2/11',
-                    'flex justify-end p-4',
-                    'bg-red-500 rounded-b-box border-white border-t-4 cursor-pointer',
-                    'transition [transform-origin:0_0]',
-                    'transition',
-                    {
-                      '[transform:rotateX(-90deg)]':
-                        stateMachine.experienceOpenedStepOne,
+                <div className={classNames('w-box-side h-box-2/11 p-3')}>
+                  <div
+                    className={classNames(
+                      'w-full h-full',
+                      'flex justify-end',
+                      'rounded-b-box rounded-t-lg bg-white cursor-pointer',
+                      'transition [transform-origin:0_0]',
+                      'drop-shadow-lg',
+                      {
+                        '[transform:rotateX(-90deg)]':
+                          stateMachine.experienceOpenedStepOne,
+                      }
+                    )}
+                    onClick={() =>
+                      toggleSection('contact', !stateMachine.contactOpened)
                     }
-                  )}
-                  onClick={() =>
-                    toggleSection('contact', !stateMachine.contactOpened)
-                  }
-                >
-                  <h1 className="text-3xl">CONTACT</h1>
+                  >
+                    {/*<h1 className="text-3xl">CONTACT</h1>*/}
+                  </div>
                 </div>
               </section>
             </div>
@@ -259,7 +279,7 @@ const IndexPage = () => {
             <div
               className={classNames(
                 'min-h-box-side min-w-box-side absolute top-0 left-0',
-                'bg-red-500 rounded-box',
+                'bg-white rounded-box',
                 '[backface-visibility:hidden] rotate-y-180'
               )}
               onClick={() =>

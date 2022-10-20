@@ -18,21 +18,21 @@ module.exports = {
         'box-8/11': '43.64vh',
         'box-9/11': '49.09vh',
       },
-    },
-    borderRadius: {
-      box: '100px',
-    },
-    minWidth: {
-      'box-side': '60vh',
-    },
-    minHeight: {
-      'box-side': '60vh',
-    },
-    fontFamily: {
-      sans: ['Dosis'],
-    },
-    transitionDuration: {
-      DEFAULT: `250ms`,
+      borderRadius: {
+        box: '100px',
+      },
+      minWidth: {
+        'box-side': '60vh',
+      },
+      minHeight: {
+        'box-side': '60vh',
+      },
+      fontFamily: {
+        sans: ['Dosis'],
+      },
+      transitionDuration: {
+        DEFAULT: `250ms`,
+      },
     },
   },
   plugins: [],

@@ -16,3 +16,7 @@
     font-named-instance: 'Regular';
     src: url(/fonts/Dosis-VariableFont_wght.ttf) format("truetype");
 }
+
+body {
+    background-color: #eeeeee;
+}
