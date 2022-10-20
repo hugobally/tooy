@@ -11,14 +11,16 @@ module.exports = {
         'box-margin-y': '20vh',
         'box-side-double': '120vh',
         'box-side': '60vh',
-        'box-2/12': '10vh',
-        'box-4/12': '20vh',
-        'box-8/12': '40vh',
-        'box-10/12': '50vh',
-      }
+        'box-2/11': '10.91vh',
+        'box-3/11': '16.36vh',
+        'box-4/11': '21.82vh',
+        'box-7/11': '38.18vh',
+        'box-8/11': '43.64vh',
+        'box-9/11': '49.09vh',
+      },
     },
     borderRadius: {
-      'box': '100px',
+      box: '100px',
     },
     minWidth: {
       'box-side': '60vh',
@@ -27,7 +29,10 @@ module.exports = {
       'box-side': '60vh',
     },
     fontFamily: {
-      'sans': ['Dosis'],
+      sans: ['Dosis'],
+    },
+    transitionDuration: {
+      DEFAULT: `250ms`,
     },
   },
   plugins: [],
