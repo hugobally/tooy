@@ -1,7 +1,7 @@
 // noinspection JSCheckFunctionSignatures
 
 import * as React from 'react'
-import classNames from 'classnames'
+import cl from 'classnames'
 import { useState } from 'react'
 import About from 'src/components/About'
 import Experiences from 'src/components/Experiences'
@@ -79,36 +79,36 @@ const IndexPage = () => {
 
   return (
     <main
-      className={classNames(
+      className={cl(
         'w-screen flex flex-col mt-box-margin-y items-center'
       )}
     >
-      <div className={classNames('relative w-full flex justify-center')}>
-        <div className={classNames('absolute bottom-0')}>
+      <div className={cl('relative w-full flex justify-center')}>
+        <div className={cl('absolute bottom-0')}>
           <header>
             {/*TODO Semantics on h1/2/3..*/}
-            <div className="text-red-500 text-center mb-8">
-              <h1 className="text-4xl text-center">Hugo Bally</h1>
-              <h2 className="block w-full text-center mt-4 text-2xl"> Fullstack Developer</h2>
-            </div>
+            {/*<div className="text-center mb-8">*/}
+            {/*  <h1 className="text-4xl text-center">Hugo Bally</h1>*/}
+            {/*  <h2 className="block w-full text-center mt-4 text-2xl"> Fullstack Developer</h2>*/}
+            {/*</div>*/}
           </header>
         </div>
       </div>
       <div
-        className={classNames(
+        className={cl(
           'w-box-side-double flex transition justify-center'
         )}
       >
         {/* Box Container */}
         <div
-          className={classNames(
+          className={cl(
             'min-h-box-side min-w-box-side flex flex-col',
             '[perspective:1000px]'
           )}
         >
           {/* Box Flipper */}
           <div
-            className={classNames(
+            className={cl(
               'relative [transform-style:preserve-3d] transition',
               {
                 'rotate-y-180': stateMachine.projectsOpened,
@@ -117,7 +117,7 @@ const IndexPage = () => {
           >
             {/* Box Front Side*/}
             <div
-              className={classNames(
+              className={cl(
                 'min-h-box-side min-w-box-side',
                 '[backface-visibility:hidden] top-0 left-0'
               )}

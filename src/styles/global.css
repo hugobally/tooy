@@ -8,15 +8,34 @@
     }
 }
 
-@font-face {
-    font-family: 'Dosis';
-    font-weight: 200 800;
-    font-display: swap;
-    font-style: normal;
-    font-named-instance: 'Regular';
-    src: url(/fonts/Dosis-VariableFont_wght.ttf) format("truetype");
+
+@layer components {
+    /*
+        TODO Temporary - DRY it properly when the design is OK
+    */
+    .section {
+        @apply bg-white hover:bg-red-500 cursor-pointer rounded-tl-lg rounded-tr-lg rounded-b-lg drop-shadow hover:text-white border-gray-200 border
+    }
 }
 
+/*@font-face {*/
+/*    font-family: 'Open Sans';*/
+/*    font-weight: 200 800;*/
+/*    font-display: swap;*/
+/*    font-style: normal;*/
+/*    font-named-instance: 'Regular';*/
+/*    src: url(/fonts/OpenSans-VariableFont_wdth,wght.ttf) format("truetype");*/
+/*}*/
+
+/*@font-face {*/
+/*    font-family: 'Dosis';*/
+/*    font-weight: 200 800;*/
+/*    font-display: swap;*/
+/*    font-style: normal;*/
+/*    font-named-instance: 'Regular';*/
+/*    src: url(/fonts/Dosis-VariableFont_wght.ttf) format("truetype");*/
+/*}*/
+
 body {
-    background-color: #eeeeee;
+    /*background-color: #000000;*/
 }

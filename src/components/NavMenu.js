@@ -1,9 +1,9 @@
 import * as React from 'react'
-import classNames from 'classnames'
+import cl from 'classnames'
 
 const NavMenu = () => {
   return (
-    <nav className={classNames('hidden absolute -left-36')}>
+    <nav className={cl('hidden absolute -left-36')}>
       <ul>
         <li>back</li>
         <li>personal projects</li>

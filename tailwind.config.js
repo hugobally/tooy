@@ -28,7 +28,7 @@ module.exports = {
         'box-side': '60vh',
       },
       fontFamily: {
-        sans: ['Dosis'],
+        sans: ['Shrikhand'],
       },
       transitionDuration: {
         DEFAULT: `250ms`,

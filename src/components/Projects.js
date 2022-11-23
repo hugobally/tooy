@@ -1,13 +1,13 @@
 import * as React from 'react'
-import classNames from 'classnames'
+import cl from 'classnames'
 import PictureIcon from 'src/images/picture-icon.svg'
-import SectionCover from "src/components/SectionCover";
+import SectionCover from 'src/components/SectionCover'
 
 const Projects = ({ stateMachine, toggleSection }) => {
   return (
     <section>
       <div
-        className={classNames(
+        className={cl(
           'w-box-4/11 h-box-7/11 p-3',
           'transition [transform-origin:0_0]',
           {
@@ -17,18 +17,16 @@ const Projects = ({ stateMachine, toggleSection }) => {
         )}
       >
         <div
-          className={classNames(
-            'h-full w-full flex',
-            'bg-white cursor-pointer',
-            'rounded-tr-box rounded-tl-lg rounded-b-lg',
-            'drop-shadow-lg',
-            'text-red-500'
-          )}
+          className={cl('h-full w-full flex', 'section')}
           onClick={() =>
             toggleSection('projects', !stateMachine.projectsOpened)
           }
         >
-            <SectionCover icon={PictureIcon} direction="vertical" title="personal projects"/>
+          <SectionCover
+            icon={PictureIcon}
+            title="personal projects"
+            vertical
+          />
         </div>
       </div>
     </section>
@@ -38,7 +36,7 @@ const Projects = ({ stateMachine, toggleSection }) => {
 export const ProjectsContent = ({ stateMachine, toggleSection }) => {
   return (
     <div
-      className={classNames(
+      className={cl(
         'min-h-box-side min-w-box-side absolute top-0 left-0',
         'bg-white rounded-box',
         '[backface-visibility:hidden] rotate-y-180'

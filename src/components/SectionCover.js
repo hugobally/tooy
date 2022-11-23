@@ -1,19 +1,22 @@
 import * as React from 'react'
-import classNames from 'classnames'
+import cl from 'classnames'
 
-const SectionCover = ({ title, icon, direction, order }) => {
+const SectionCover = ({ title, icon, order, vertical }) => {
   const els = [
-    <img key="img" alt="flip-flops" src={icon} className="w-20" />,
-    <h1 key="title" className="text-4xl">{title}</h1>,
+    <h1 key="title" className="text-xl">
+      {title}
+    </h1>,
+    // <img key="img" alt="flip-flops" src={icon} className="w-14" />,
   ]
 
   return (
     <div
-      className={classNames('w-full h-full p-5', {
-        'flex flex-col justify-end items-end p-5 text-right': direction === 'vertical',
+      className={cl('w-full h-full p-5 flex justify-end', {
+        'flex-col justify-end text-right items-end': vertical,
+        'items-center': !vertical
       })}
     >
-      {els}
+      {vertical ? els.reverse() : els}
     </div>
   )
 }
