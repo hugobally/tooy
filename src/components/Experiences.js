@@ -8,7 +8,7 @@ const Experiences = ({ stateMachine, toggleSection }) => {
     <section>
       <div
         className={cl('p-3 transition-all', {
-          'w-box-4/11 h-box-7/11': !stateMachine.experienceOpened,
+          'w-box-4/11 h-box-2/11': !stateMachine.experienceOpened,
           'w-box-side h-box-side': stateMachine.experienceOpened,
         })}
       >

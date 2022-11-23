@@ -2,6 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+    :root {
+        --box-side-length: 75vh;
+        --side-col-width: calc((100vw - var(--box-side-length)) / 2);
+        --r-side-col-start: calc(var(--side-col-width) + var(--box-side-length))
+    }
+}
+
 @layer utilities {
     .rotate-y-180 {
         transform: rotateY(180deg);

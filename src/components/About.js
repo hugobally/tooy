@@ -2,15 +2,19 @@ import * as React from 'react'
 import cl from 'classnames'
 import FlipFlopIcon from 'src/images/flipflop-icon.svg'
 import SectionCover from 'src/components/SectionCover'
+import TravelIllustration from 'src/images/travel-illustration.svg'
+import ReadingIllustration from 'src/images/reading-illustration.svg'
 
-const About = ({ stateMachine, toggleSection }) => {
+const About = ({ stateMachine, toggleSection, setDebugHovered }) => {
   return (
     <section
       className={cl('transition [transform-origin:100%_0]', {
         '[transform:rotateY(-90deg)]': stateMachine.experienceOpenedStepThree,
       })}
+      onMouseEnter={() => setDebugHovered(TravelIllustration)}
+      onMouseLeave={() => setDebugHovered(ReadingIllustration)}
     >
-      <div className={cl('w-box-3/11 h-box-9/11 p-3')}>
+      <div className={cl('w-box-3/11 h-box-4/11 p-3')}>
         <div
           className={cl(
             'w-full h-full flex transition',

@@ -8,7 +8,7 @@ const Projects = ({ stateMachine, toggleSection }) => {
     <section>
       <div
         className={cl(
-          'w-box-4/11 h-box-7/11 p-3',
+          'w-box-4/11 h-box-2/11 p-3',
           'transition [transform-origin:0_0]',
           {
             '[transform:rotateY(-90deg)]':
