@@ -1,7 +1,7 @@
 import * as React from 'react'
 import cl from 'classnames'
-import ForestIcon from 'src/images/forest-icon.svg'
-import SectionCover from './SectionCover'
+// import ForestIcon from '/images/forest-icon.svg'
+import SectionCover from './SectionCover.jsx'
 
 const Travels = ({ stateMachine, toggleSection }) => {
   return (
@@ -29,7 +29,7 @@ const Travels = ({ stateMachine, toggleSection }) => {
           onClick={() => toggleSection('travels', !stateMachine.travelsOpened)}
         >
           <SectionCover
-            icon={ForestIcon}
+            icon="/images/forest-icon.svg"
             title="travels"
           />
         </div>

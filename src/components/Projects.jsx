@@ -1,7 +1,7 @@
 import * as React from 'react'
 import cl from 'classnames'
-import PictureIcon from 'src/images/picture-icon.svg'
-import SectionCover from 'src/components/SectionCover'
+// import PictureIcon from '/images/picture-icon.svg'
+import SectionCover from './SectionCover.jsx'
 
 const Projects = ({ stateMachine, toggleSection }) => {
   return (
@@ -23,7 +23,7 @@ const Projects = ({ stateMachine, toggleSection }) => {
           }
         >
           <SectionCover
-            icon={PictureIcon}
+            icon="/images/picture-icon.svg"
             title="personal projects"
             vertical
           />

@@ -1,7 +1,7 @@
 import * as React from 'react'
 import cl from 'classnames'
-import GithubIcon from 'src/images/github-icon.svg'
-import DrinkIcon from 'src/images/drink-icon.svg'
+import GithubIcon from '/images/github-icon.svg'
+import DrinkIcon from '/images/drink-icon.svg'
 import SectionCover from "./SectionCover";
 
 const Contact = ({ stateMachine, toggleSection }) => {
