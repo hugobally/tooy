@@ -1,7 +1,7 @@
 import * as React from 'react'
 import cl from 'classnames'
-import BackpackIcon from 'src/images/backpack-icon.svg'
-import SectionCover from 'src/components/SectionCover'
+// import BackpackIcon from '/images/backpack-icon.svg'
+import SectionCover from './SectionCover.jsx'
 
 const Experiences = ({ stateMachine, toggleSection }) => {
   return (
@@ -26,7 +26,7 @@ const Experiences = ({ stateMachine, toggleSection }) => {
           }
         >
           <SectionCover
-            icon={BackpackIcon}
+            icon="/images/backpack-icon.svg"
             title="experiences & education"
             vertical
           />

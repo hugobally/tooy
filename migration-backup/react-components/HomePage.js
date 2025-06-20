@@ -3,13 +3,13 @@
 import * as React from 'react'
 import cl from 'classnames'
 import { useState } from 'react'
-import About from 'src/components/About'
-import Experiences from 'src/components/Experiences'
-import Projects, { ProjectsContent } from 'src/components/Projects'
-import Travels from 'src/components/Travels'
-import NavMenu from 'src/components/NavMenu'
-import Contact from 'src/components/Contact'
-import ReadingIllustration from 'src/images/reading-illustration.svg'
+import About from './About'
+import Experiences from './Experiences'
+import Projects, { ProjectsContent } from './Projects'
+import Travels from './Travels'
+import NavMenu from './NavMenu'
+import Contact from './Contact'
+import ReadingIllustration from '/images/reading-illustration.svg'
 
 const TRANSITION_DURATION = 250
 
@@ -185,5 +185,3 @@ const IndexPage = () => {
 }
 
 export default IndexPage
-
-export const Head = () => <title>Toto</title>

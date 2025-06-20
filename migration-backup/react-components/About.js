@@ -1,9 +1,9 @@
 import * as React from 'react'
 import cl from 'classnames'
-import FlipFlopIcon from 'src/images/flipflop-icon.svg'
-import SectionCover from 'src/components/SectionCover'
-import TravelIllustration from 'src/images/travel-illustration.svg'
-import ReadingIllustration from 'src/images/reading-illustration.svg'
+import FlipFlopIcon from '/images/flipflop-icon.svg'
+import SectionCover from './SectionCover'
+import TravelIllustration from '/images/travel-illustration.svg'
+import ReadingIllustration from '/images/reading-illustration.svg'
 
 const About = ({ stateMachine, toggleSection, setDebugHovered }) => {
   return (
